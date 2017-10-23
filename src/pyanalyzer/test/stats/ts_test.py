@@ -1,5 +1,5 @@
 from unittest import TestCase
-from stats.ts import no_scaling, time_scaling, diff_return, rv
+from pyanalyzer.stats.ts import no_scaling, time_scaling, diff_return, rv
 import pandas
 from datetime import datetime
 

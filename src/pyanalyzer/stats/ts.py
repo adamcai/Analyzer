@@ -1,5 +1,5 @@
 import numpy
-from stats.timeseries import TimeSeries
+from pyanalyzer.stats.timeseries import TimeSeries
 from unittest import TestCase
 
 
