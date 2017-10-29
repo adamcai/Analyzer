@@ -5,9 +5,9 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{c395a3c5-bbb4-4c07-af49-a7119b98b8c1}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>test\stats\ts_test.py</StartupFile>
+    <StartupFile>excel.py</StartupFile>
     <SearchPath />
-    <WorkingDirectory>.</WorkingDirectory>
+    <WorkingDirectory>..\.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
@@ -19,6 +19,9 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="excel.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="stats\timeseries.py">
       <SubType>Code</SubType>
     </Compile>
@@ -29,6 +32,7 @@
     <Compile Include="test\stats\ts_test.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="test\" />

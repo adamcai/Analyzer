@@ -99,3 +99,11 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# excel workbooks
+*.xlsm
+*.xls
+*.xlsb
+
+#visual studio
+.vs/

@@ -34,6 +34,7 @@ def time_scaling(d1, d2, holidays = None):
     return _time_scaling(d1, d2, holidays)
 
 def diff_return(ts, lag, scaling = no_scaling, holidays = None):
+
     if lag < 0:
         raise ValueError("lag must be >= 0")
     r = ts - ts.shift(lag) 
@@ -55,19 +56,17 @@ def rv(ts, window, rtype = 'N', lag = 1, drift = False, scaling = no_scaling):
         rtype -- return type. N<default> = normal vol(i.e. diff return) 
         lag -- return lag. For now it has to be integer
      '''
-
-
     if rtype == 'N':
         return_ts = diff_return(ts, lag, scaling)
     else:
         raise ValueError("Invalid rtype input %s" % rtype)
     rv_result = []
     for i in range(len(return_ts)):
-        if numpy.isnan(return_ts.iloc[i]):
+        if numpy.isnan(return_ts.iloc[i]) or i < window - 1:
             rv_result.append(numpy.NaN)
             continue
-        std = return_ts.iloc[i:i+window].std()
-        rv_result.append(std)
+        window_ts = return_ts.iloc[i - window:i]
+        rv_result.append(window_ts.std())
     return TimeSeries(index = ts.index, data = rv_result, name = ts.name)
 
 

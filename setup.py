@@ -2,7 +2,7 @@ from distutils.core import setup
 from setuptools import find_packages
 
 setup(
-    name='analyzer',
+    name='pyanalyzer',
     version='0.1dev',
     license='GNU',
     packages=['pyanalyzer', 'pyanalyzer.stats'],
