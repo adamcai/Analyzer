@@ -19,6 +19,12 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="blackmodel.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="calendar.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="excel.py">
       <SubType>Code</SubType>
     </Compile>
@@ -29,7 +35,19 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="stats\__init__.py" />
+    <Compile Include="test\calendar_test.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test\stats\timeseries_test.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="test\stats\ts_test.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test\utils.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="__init__.py" />

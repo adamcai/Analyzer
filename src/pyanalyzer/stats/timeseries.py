@@ -1,6 +1,15 @@
 import numpy as np
 import pandas as pd
 
+class _TimeSeries(pd.Series):
+
+    def __init__(self, index = None, data = None, name = None):
+        super(_TimeSeries, self).__init__(index = index, data = data, name = name)
+
+
+    def log(self):
+        return _TimeSeries(index = self.index, data = np.log(self._values), name = self.name)
+
 
 def TimeSeries(index = None, data = None, name = None):
 
@@ -13,4 +22,4 @@ def TimeSeries(index = None, data = None, name = None):
             if not all(x<y for x, y in zip(index, index[1:])):
                 raise ValueError('Index dates are not strictly increasing')
                                 
-    return pd.Series(index = index, data = data, name =  name)
+    return _TimeSeries(index, data, name)
